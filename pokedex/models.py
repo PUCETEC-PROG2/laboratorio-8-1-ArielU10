@@ -9,7 +9,7 @@ class Trainer(models.Model):
     level = models.IntegerField(default=1)
     
     def __str__(self) -> str:
-        return f'{self.name}{self.last_name}'
+        return f'{self.name} {self.last_name}'
 
 
 class Pokemon(models.Model):
