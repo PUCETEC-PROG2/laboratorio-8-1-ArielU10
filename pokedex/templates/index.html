@@ -32,6 +32,35 @@
                 </div>
             </div>
         {% endfor %}
+
+        {% for  trainer in trainers %}
+            <div class="card">
+                <img src="{{ trainer.picture.url }}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{trainer}}</h4>
+                    <p class="card-text">
+                        Nombre: {{ trainer.name }}
+                        <br>
+                        Fecha de Nacimiento: {{ trainer.birthday }}
+                        <br>
+                        Nivel: {{ trainer.level }}
+                    </p>
+                    <a href="trainer/{{ trainer.id }}" class="btn btn-primary">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </a>
+                    {% if user.is_authenticated %}
+                    <a href="edit_trainer/{{ trainer.id }}" class="btn btn-secondary">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <a href="delete_trainern/{{ trainer.id }}" class="btn btn-danger">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </a>
+                    {% endif %}  
+            
+                    
+                </div>
+            </div>
+        {% endfor %}
     </div>
     
     
